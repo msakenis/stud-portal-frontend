@@ -1,4 +1,11 @@
 export { default as Button } from './Button/Button';
-export { default as HeaderBase } from './HeaderBase/HeaderBase';
-export { default as Section } from './Section/Section';
 export { default as Loading } from './Loading/Loading';
+export { default as InputField } from './InputField/InputField';
+export { default as Notification } from './Notification/Notification';
+export { default as FormTemplate } from './FormTemplate/FormTemplate';
+export { default as PrivateRoute } from './PrivateRoute/PrivateRoute';
+export { default as Wrapper } from './Wrapper/Wrapper';
+export { default as Logo } from './Logo/Logo';
+export { default as HeaderBase } from './HeaderBase/HeaderBase';
+export { default as FlexDiv } from './FlexDiv/FlexDiv';
+export { default as IconNav } from './IconNav/IconNav';
