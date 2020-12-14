@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { HighlightIdContext } from '../../contexts/HighlightId.context';
 import * as S from './HeaderBase.style';
-import { IconNav } from '../';
+import { IconInput } from '../';
 function HeaderBase() {
   const selectedId = useContext(HighlightIdContext);
   const nav = [
@@ -32,7 +32,7 @@ function HeaderBase() {
             key={link.id}
             to={link.to}
           >
-            <IconNav className={link.iconClass} /> {link.name}
+            <IconInput className={link.iconClass} /> {link.name}
           </S.StyledLink>
         ))}
       </S.Actions>

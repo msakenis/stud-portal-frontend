@@ -19,14 +19,22 @@ export const StyledLink = styled(Link)`
   font-size: 1.2em;
   text-decoration: none;
   padding: 2em 0;
-  padding-left: 40px;
+  padding-left: ${(props) =>
+    props.highlighted === 'marked' ? '35px' : '40px'};
   cursor: pointer;
+
   background: ${(props) =>
     props.highlighted === 'marked'
       ? props.theme.secondaryHover.color
       : 'unset'};
+  border-left: ${(props) =>
+    props.highlighted === 'marked' ? '5px solid #fff;' : 'none'};
+
   &:hover {
     background: ${(props) => props.theme.secondaryHover.color};
+    border-left: 5px solid #fff;
+
+    padding-left: 35px;
   }
   & i {
     padding-right: 5px;
