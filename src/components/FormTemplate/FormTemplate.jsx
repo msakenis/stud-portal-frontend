@@ -13,6 +13,7 @@ function FormTemplate({
   formTitle,
   loginNotif,
   options,
+  iconClass,
 }) {
   const [fieldValues, setFieldValues] = useState({});
 
@@ -45,6 +46,7 @@ function FormTemplate({
               maxLength={field.maxLength}
               placeholder={field.placeholder}
               options={options}
+              iconClass={field.iconClass}
               handleChange={(e) =>
                 setFieldValues({ ...fieldValues, [field.name]: e.target.value })
               }

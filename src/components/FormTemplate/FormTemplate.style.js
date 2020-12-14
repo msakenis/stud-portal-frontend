@@ -12,6 +12,7 @@ export const ButtonBox = styled.div`
 
 export const FormDiv = styled.div`
   width: 100%;
+  background-color: #fff;
 `;
 
 export const FlexBox = styled.div`
