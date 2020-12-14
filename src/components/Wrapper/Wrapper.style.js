@@ -13,9 +13,9 @@ export const Background = styled.div`
 `;
 
 export const MainBox = styled.div`
-  width: 70%;
+  width: 80%;
   background-color: #fff;
-  height: 70%;
+  height: 80%;
   border-radius: 10px;
   position: absolute;
   top: 50%;
