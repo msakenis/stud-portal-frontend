@@ -12,12 +12,13 @@ function InputField({
   maxLength,
   placeholder,
   options,
+  iconClass,
 }) {
   switch (type) {
     case 'email':
       return (
         <S.InputDiv>
-          <S.Icon className="fas fa-envelope"></S.Icon>
+          <S.Icon className="fas fa-envelope" />
           <S.InputField
             onChange={handleChange}
             id={inputId}
@@ -34,7 +35,7 @@ function InputField({
     case 'password':
       return (
         <S.InputDiv>
-          <S.Icon className="fas fa-key"></S.Icon>
+          <S.Icon className="fas fa-key" />
           <S.InputField
             onChange={handleChange}
             id={inputId}
@@ -75,6 +76,7 @@ function InputField({
     default:
       return (
         <S.InputDiv>
+          {iconClass && <S.Icon className={iconClass} />}
           <S.InputField
             onChange={handleChange}
             id={inputId}
