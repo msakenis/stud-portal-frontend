@@ -13,3 +13,4 @@ export { default as TopHeader } from './TopHeader/TopHeader';
 export { default as SearchInput } from './SearchInput/SearchInput';
 export { default as MainWrapper } from './MainWrapper/MainWrapper';
 export { default as IconBtn } from './IconBtn/IconBtn';
+export { default as IconBtnsConfirm } from './IconBtnsConfirm/IconBtnsConfirm';

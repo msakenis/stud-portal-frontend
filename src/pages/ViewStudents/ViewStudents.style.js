@@ -18,6 +18,7 @@ export const Table = styled.table`
   table-layout: fixed;
   overflow: hidden;
   background-color: #fff;
+  margin-top: 5px;
 
   box-shadow: 1px 3px 3px 1px ${(props) => props.theme.primaryHover.background};
   && th {
