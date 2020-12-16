@@ -24,6 +24,7 @@ export const Input = styled.input`
   border: none;
   color: ${(props) => props.theme.primary.color};
   background-color: ${(props) => props.theme.primary.background};
+  box-shadow: 1px 3px 3px 1px ${(props) => props.theme.primaryHover.background};
   &:focus {
     box-shadow: 0 0 3px 1px ${(props) => props.theme.secondaryHover.color};
   }

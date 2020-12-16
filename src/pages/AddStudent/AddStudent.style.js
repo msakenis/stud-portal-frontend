@@ -10,6 +10,7 @@ export const InputBox = styled.div`
   border-radius: 5px;
   max-width: 70%;
   box-sizing: border-box;
+  box-shadow: 1px 3px 3px 1px ${(props) => props.theme.primaryHover.background};
 `;
 
 export const Title = styled.h2`
