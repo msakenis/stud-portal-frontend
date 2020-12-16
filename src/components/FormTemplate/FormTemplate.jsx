@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { InputField, Button, Notification } from '../';
 
 import * as S from './FormTemplate.style';
@@ -13,9 +13,13 @@ function FormTemplate({
   formTitle,
   loginNotif,
   options,
-  iconClass,
+  studentData,
 }) {
-  const [fieldValues, setFieldValues] = useState({});
+  const [fieldValues, setFieldValues] = useState('');
+
+  useEffect(() => {
+    studentData && setFieldValues(studentData[0]);
+  }, [studentData]);
 
   return (
     <>
@@ -28,6 +32,7 @@ function FormTemplate({
       )}
       <S.FormDiv>
         <S.FormTitle>{formTitle}</S.FormTitle>
+
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -47,9 +52,15 @@ function FormTemplate({
               placeholder={field.placeholder}
               options={options}
               iconClass={field.iconClass}
-              handleChange={(e) =>
-                setFieldValues({ ...fieldValues, [field.name]: e.target.value })
+              inputValue={
+                fieldValues[field.name] ? fieldValues[field.name] : ''
               }
+              handleChange={(e) => {
+                setFieldValues({
+                  ...fieldValues,
+                  [field.name]: e.target.value,
+                });
+              }}
             />
           ))}
           <S.ButtonBox>

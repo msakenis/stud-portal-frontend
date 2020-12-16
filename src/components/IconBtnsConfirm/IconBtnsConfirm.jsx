@@ -1,10 +1,12 @@
 import React from 'react';
 import { IconBtn } from '../';
+
 function IconBtnsConfirm({
   displayBtns,
   handleClick,
   handleClose,
   handleConfirm,
+  handleEdit,
   selectedId,
   id,
 }) {
@@ -16,7 +18,7 @@ function IconBtnsConfirm({
     </>
   ) : (
     <>
-      <IconBtn className="fas fa-edit" />
+      <IconBtn className="fas fa-edit" handleClick={handleEdit} />
       <IconBtn className="fas fa-trash-alt" handleClick={handleClick} />
     </>
   );

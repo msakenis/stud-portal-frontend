@@ -7,6 +7,7 @@ import {
 } from '../../components';
 import { HighlightIdContext } from '../../contexts/HighlightId.context';
 import * as S from './ViewStudents.style';
+import { useHistory } from 'react-router-dom';
 
 function deleteStudent(
   id,
@@ -56,7 +57,7 @@ function ViewStudents() {
   const [notifType, setNotifType] = useState();
   const [displayBtns, setDisplayBtns] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState('');
-
+  const history = useHistory();
   useEffect(() => {
     selectedId.setId(3);
     fetch(`${process.env.REACT_APP_SERVER_URL}/students`, {
@@ -123,6 +124,9 @@ function ViewStudents() {
                           )
                         }
                         handleClose={() => setDisplayBtns(false)}
+                        handleEdit={() =>
+                          history.push(`/edit-student/${row.id}`)
+                        }
                       />
                     </td>
                   </tr>

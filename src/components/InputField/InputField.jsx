@@ -13,6 +13,7 @@ function InputField({
   placeholder,
   options,
   iconClass,
+  inputValue,
 }) {
   switch (type) {
     case 'email':
@@ -21,6 +22,7 @@ function InputField({
           <S.Icon className="fas fa-envelope" />
           <S.InputField
             onChange={handleChange}
+            onBlur={handleChange}
             id={inputId}
             name={name}
             type="email"
@@ -28,6 +30,7 @@ function InputField({
             minLength={minLength}
             maxLength={maxLength}
             placeholder={placeholder}
+            value={inputValue}
           />
           {label && <S.Label htmlFor={inputId}>{label}</S.Label>}
         </S.InputDiv>
@@ -38,6 +41,7 @@ function InputField({
           <S.Icon className="fas fa-key" />
           <S.InputField
             onChange={handleChange}
+            onBlur={handleChange}
             id={inputId}
             name={name}
             type="password"
@@ -79,6 +83,7 @@ function InputField({
           {iconClass && <S.Icon className={iconClass} />}
           <S.InputField
             onChange={handleChange}
+            onBlur={handleChange}
             id={inputId}
             name={name}
             type="text"
@@ -86,6 +91,7 @@ function InputField({
             minLength={minLength}
             maxLength={maxLength}
             placeholder={placeholder}
+            value={inputValue}
           />
           {label && <S.Label htmlFor={inputId}>{label}</S.Label>}
         </S.InputDiv>
