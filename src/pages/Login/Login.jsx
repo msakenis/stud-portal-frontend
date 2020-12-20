@@ -4,6 +4,7 @@ import { registration } from '../../utils/formData';
 import { Wrapper, Logo, FormTemplate } from '../../components';
 import { AuthContext } from '../../contexts/Auth.context';
 import * as S from './Login.style';
+import LoginBg from '../../assets/img/login-bg.jpg';
 
 function loginTo(
   fieldValues,
@@ -58,10 +59,7 @@ function Login() {
   const [loadingBtn, setLoadingBtn] = useState(false);
 
   return (
-    <Wrapper
-      backgroundImg={'https://wallpaperset.com/w/full/6/b/1/409090.jpg'}
-      isBlur={true}
-    >
+    <Wrapper backgroundImg={LoginBg} isBlur={true}>
       <>
         {token.token ? (
           <Redirect to={{ pathname: '/' }} />

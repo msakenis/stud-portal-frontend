@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import graduatedImg from '../../assets/img/graduated-login.jpg';
 
 export const FlexDiv = styled.div`
   display: flex;
@@ -9,8 +10,7 @@ export const FlexDiv = styled.div`
 `;
 
 export const ImageBox = styled.div`
-  background: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-we-graduated-poster-hd-background-image_150661.jpg')
-    no-repeat fixed;
+  background: url(${graduatedImg}) no-repeat;
   background-size: cover;
   background-position: center center;
   width: 40%;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeaderBase, Wrapper, TopHeader } from '../';
+import MainbgImg from '../../assets/img/main-bg.jpg';
 import { func, string, oneOfType, array, object, element } from 'prop-types';
 
 import * as S from './MainWrapper.style';
@@ -8,11 +9,7 @@ function MainWrapper({ backgroundImg, addBtnTxt, children, handleSearch }) {
   return (
     <Wrapper
       id="wrapper"
-      backgroundImg={
-        backgroundImg
-          ? backgroundImg
-          : 'https://wallpaperaccess.com/full/142585.jpg'
-      }
+      backgroundImg={backgroundImg ? backgroundImg : MainbgImg}
     >
       <S.FlexDiv>
         <HeaderBase />
