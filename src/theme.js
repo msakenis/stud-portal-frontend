@@ -1,19 +1,19 @@
 const theme = {
   primary: {
-    color: '#616B6B',
-    background: '#DFE2E2',
+    color: '#333333',
+    background: '#D6D6D6',
   },
   secondary: {
-    color: '#376A9A',
-    background: '#7D869C',
+    color: '#643173',
+    background: '#7D5BA6',
   },
   primaryHover: {
     color: '#899494',
     background: '#A9B1B1',
   },
   secondaryHover: {
-    color: '#4A90CF',
-    background: '#969EB0',
+    color: '#7D5BA6',
+    background: '#707070',
   },
   mobile: '600px',
   tablet: '800px',

@@ -59,9 +59,7 @@ function Login() {
 
   return (
     <Wrapper
-      backgroundImg={
-        'https://blog.vpncity.com/wp-content/uploads/2020/01/business.jpg'
-      }
+      backgroundImg={'https://wallpaperset.com/w/full/6/b/1/409090.jpg'}
       isBlur={true}
     >
       <>

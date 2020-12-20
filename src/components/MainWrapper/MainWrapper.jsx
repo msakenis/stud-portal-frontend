@@ -11,7 +11,7 @@ function MainWrapper({ backgroundImg, addBtnTxt, children, handleSearch }) {
       backgroundImg={
         backgroundImg
           ? backgroundImg
-          : 'https://pe-insights.com/wp-content/uploads/2020/08/Business-wallpaper1.jpg'
+          : 'https://wallpaperaccess.com/full/142585.jpg'
       }
     >
       <S.FlexDiv>

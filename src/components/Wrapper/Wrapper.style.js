@@ -24,6 +24,8 @@ export const MainBox = styled.div`
   box-sizing: border-box;
   transform: translate(-50%, -50%);
   overflow: hidden;
+
+  box-shadow: 5px 5px 20px 4px ${({ theme }) => theme.primary.color};
   opacity: 0.9;
   @media (max-width: ${({ theme }) => theme.smallLaptop}) {
     height: 92%;
