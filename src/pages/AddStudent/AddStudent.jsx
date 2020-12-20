@@ -15,7 +15,7 @@ function addStudentTo(
 ) {
   error = false;
   setLoadingBtn(true);
-  fetch(`${process.env.REACT_APP_SERVER_URL}/AddStudent`, {
+  fetch(`/api/AddStudent`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

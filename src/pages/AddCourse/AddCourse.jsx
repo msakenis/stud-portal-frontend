@@ -22,7 +22,7 @@ function addCourseTo(
   error = false;
   setLoadingBtn(true);
   if (selectedStudents.length !== 0) {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/AddCourse`, {
+    fetch(`/api/AddCourse`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function AddCourse() {
 
   useEffect(() => {
     selectedId.setId(0);
-    fetch(`${process.env.REACT_APP_SERVER_URL}/AddCourse`, {
+    fetch(`/api/AddCourse`, {
       headers: {
         Authorization: token,
       },
@@ -88,21 +88,7 @@ function AddCourse() {
   }, [token, selectedId]);
 
   return (
-    <MainWrapper
-    //   handleSearch={(e) => {
-    //     setFilteredData(
-    //       unselectedStuds.filter(
-    //         (item) =>
-    //           item.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-    //           item.surname
-    //             .toLowerCase()
-    //             .includes(e.target.value.toLowerCase()) ||
-    //           item.email.toLowerCase().includes(e.target.value.toLowerCase()) ||
-    //           item.phone.includes(e.target.value)
-    //       )
-    //     );
-    //   }}
-    >
+    <MainWrapper>
       <S.FormBox>
         <S.Title>Add Course</S.Title>
         <S.InputBox>

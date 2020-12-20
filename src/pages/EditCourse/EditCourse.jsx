@@ -24,7 +24,7 @@ function editCourse(
   error = false;
   setLoadingBtn(true);
   if (selectedStudents.length !== 0) {
-    fetch(`${process.env.REACT_APP_SERVER_URL}/EditCourse/${id}`, {
+    fetch(`/api/EditCourse/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ function EditCourse() {
   useEffect(() => {
     selectedId.setId(0);
 
-    fetch(`${process.env.REACT_APP_SERVER_URL}/EditCourse/${id}`, {
+    fetch(`/api/EditCourse/${id}`, {
       headers: {
         Authorization: token,
       },
@@ -90,21 +90,7 @@ function EditCourse() {
   }, [token, selectedId, id]);
 
   return (
-    <MainWrapper
-    //   handleSearch={(e) => {
-    //     setFilteredData(
-    //       unselectedStuds.filter(
-    //         (item) =>
-    //           item.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-    //           item.surname
-    //             .toLowerCase()
-    //             .includes(e.target.value.toLowerCase()) ||
-    //           item.email.toLowerCase().includes(e.target.value.toLowerCase()) ||
-    //           item.phone.includes(e.target.value)
-    //       )
-    //     );
-    //   }}
-    >
+    <MainWrapper>
       <S.FormBox>
         <S.Title>Edit Course</S.Title>
         <S.InputBox>
