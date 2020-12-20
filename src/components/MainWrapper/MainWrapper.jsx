@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderBase, Wrapper, TopHeader } from '../';
-import { func, string, element } from 'prop-types';
+import { func, string, oneOfType, array, object, element } from 'prop-types';
 
 import * as S from './MainWrapper.style';
 
@@ -28,7 +28,7 @@ function MainWrapper({ backgroundImg, addBtnTxt, children, handleSearch }) {
 MainWrapper.propTypes = {
   backgroundImg: string,
   addBtnTxt: string,
-  children: element.isRequired,
+  children: oneOfType([array, object, element]).isRequired,
   handleSearch: func,
 };
 
