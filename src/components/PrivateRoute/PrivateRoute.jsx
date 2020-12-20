@@ -25,6 +25,7 @@ function PrivateRoute({ path, component }) {
           .then((res) => (res.ok ? setAuth(true) : setRedirect(true)))
           .catch((err) => {
             setRedirect(true);
+            auth.clearLocalStorage();
           });
       } else {
         auth.clearLocalStorage();
@@ -32,6 +33,7 @@ function PrivateRoute({ path, component }) {
       }
     } else {
       setRedirect(true);
+      auth.clearLocalStorage();
     }
   }, [token, auth]);
 
