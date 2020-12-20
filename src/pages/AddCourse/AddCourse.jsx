@@ -6,7 +6,7 @@ import {
   IconBtn,
 } from '../../components';
 import { AddCourseForm } from '../../utils/formData';
-import { HighlightIdContext } from '../../contexts/HighlightId.context';
+import { HighlightIdContext } from '../../contexts/HighlightId.context'; // this context highlights the menu item in page you are
 import * as S from './AddCourse.style';
 
 function addCourseTo(
@@ -121,6 +121,7 @@ function AddCourse() {
                       <SelectedStudent
                         key={student.id}
                         studentName={student.name + ' ' + student.surname}
+                        // func removes from selected studs array and adds to unselected arr
                         handleClick={() => {
                           let joinedArrFiltered = selectedStudents
                             .splice(index, 1)
@@ -149,6 +150,7 @@ function AddCourse() {
                         <td>
                           <IconBtn
                             className="fas fa-plus"
+                            // func removes from unselected studs array and adds to selected arr
                             handleClick={() => {
                               let joinedArr = selectedStudents.concat(
                                 filteredData.splice(index, 1)

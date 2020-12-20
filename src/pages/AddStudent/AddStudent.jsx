@@ -54,7 +54,7 @@ function AddStudent() {
   const [loadingBtn, setLoadingBtn] = useState(false);
 
   useEffect(() => {
-    selectedId.setId(0);
+    selectedId.setId(0); // sets to 0 to clear marked nav item
   }, [selectedId]);
 
   return (

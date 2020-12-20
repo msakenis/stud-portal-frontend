@@ -12,6 +12,7 @@ function PrivateRoute({ path, component }) {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
+    // first check if token exists, then exp date and then send req to back-end to validate token
     if (token) {
       const tokenExpiration = jwtDecode(token).exp;
       const timeNow = new Date().getTime() / 1000;

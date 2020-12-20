@@ -117,9 +117,7 @@ function ViewCourses() {
                       <td>{row.lecturer}</td>
                       <td>{row.description}</td>
                       <td>
-                        {row.student_count === 0
-                          ? 'No Students'
-                          : row.student_count}
+                        {row.stud_count === 0 ? 'No Students' : row.stud_count}
                       </td>
                       <td>{row.reg_date.slice(0, 10)}</td>
                       <td>

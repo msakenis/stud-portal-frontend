@@ -89,7 +89,7 @@ function EditStudent() {
               )
             }
             fields={AddStudentForm}
-            Data={studentData}
+            Data={studentData} // sends current data to inputs and arrays that could be edited
             errorMessage={errorMessage}
             error={error}
             notifType={notifType}

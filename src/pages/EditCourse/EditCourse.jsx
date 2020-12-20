@@ -83,9 +83,10 @@ function EditCourse() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setCourseData(data);
-        setSelectedStudents(data.selectedStuds);
-        setFilteredData(data.unselectedStuds);
+        setCourseData(data); // sets course data only
+        setSelectedStudents(data.selectedStuds); // gets selected studs from db
+        setFilteredData(data.unselectedStuds); // gets unselected studs from db
+        console.log(data);
       });
   }, [token, selectedId, id]);
 
@@ -111,7 +112,7 @@ function EditCourse() {
             fields={AddCourseForm}
             splitInput={true}
             errorMessage={errorMessage}
-            Data={courseData}
+            Data={courseData} // sends current data to inputs and arrays that could be edited
             error={error}
             notifType={notifType}
             loading={loadingBtn}
@@ -125,6 +126,7 @@ function EditCourse() {
                       <SelectedStudent
                         key={student.id}
                         studentName={student.name + ' ' + student.surname}
+                        // func removes from selected studs array and adds to unselected arr
                         handleClick={() => {
                           let joinedArrFiltered = selectedStudents
                             .splice(index, 1)
@@ -153,6 +155,7 @@ function EditCourse() {
                         <td>
                           <IconBtn
                             className="fas fa-plus"
+                            // func removes from unselected studs array and adds to selected arr
                             handleClick={() => {
                               let joinedArr = selectedStudents.concat(
                                 filteredData.splice(index, 1)
