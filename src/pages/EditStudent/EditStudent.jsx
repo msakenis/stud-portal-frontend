@@ -12,9 +12,11 @@ function editStudent(
   setNotifType,
   error,
   token,
-  id
+  id,
+  setLoadingBtn
 ) {
   error = false;
+  setLoadingBtn(true);
   fetch(`${process.env.REACT_APP_SERVER_URL}/EditStudent/${id}`, {
     method: 'POST',
     headers: {
@@ -33,10 +35,12 @@ function editStudent(
       return res.json();
     })
     .then((data) => {
+      setLoadingBtn(false);
       setError(true);
       setErrorMessage(data.msg || 'Error!');
     })
     .catch((err) => {
+      setLoadingBtn(false);
       setError(true);
       setNotifType('error');
       setErrorMessage(err.message);
@@ -50,6 +54,7 @@ function EditStudent() {
   const [notifType, setNotifType] = useState();
   const selectedId = useContext(HighlightIdContext);
   const [studentData, setStudentData] = useState();
+  const [loadingBtn, setLoadingBtn] = useState(false);
   let { id } = useParams();
 
   useEffect(() => {
@@ -61,7 +66,7 @@ function EditStudent() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setStudentData(data);
+        setStudentData(data[0]);
       });
   }, [selectedId, token, id]);
 
@@ -79,14 +84,16 @@ function EditStudent() {
                 setNotifType,
                 error,
                 token,
-                id
+                id,
+                setLoadingBtn
               )
             }
             fields={AddStudentForm}
-            studentData={studentData}
+            Data={studentData}
             errorMessage={errorMessage}
             error={error}
             notifType={notifType}
+            loading={loadingBtn}
             buttonName="Edit"
           />
         </S.InputBox>
