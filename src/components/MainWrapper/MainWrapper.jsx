@@ -1,26 +1,35 @@
 import React from 'react';
-import { HeaderBase, Wrapper, FlexDiv, TopHeader } from '../';
+import { HeaderBase, Wrapper, TopHeader } from '../';
+import { func, string, element } from 'prop-types';
 
 import * as S from './MainWrapper.style';
 
-function MainWrapper({ backgroundImg, addBtnTxt, children }) {
+function MainWrapper({ backgroundImg, addBtnTxt, children, handleSearch }) {
   return (
     <Wrapper
+      id="wrapper"
       backgroundImg={
         backgroundImg
           ? backgroundImg
           : 'https://pe-insights.com/wp-content/uploads/2020/08/Business-wallpaper1.jpg'
       }
     >
-      <FlexDiv>
+      <S.FlexDiv>
         <HeaderBase />
         <S.ContentBox>
-          <TopHeader addBtnTxt={addBtnTxt} />
+          <TopHeader addBtnTxt={addBtnTxt} handleSearch={handleSearch} />
           {children}
         </S.ContentBox>
-      </FlexDiv>
+      </S.FlexDiv>
     </Wrapper>
   );
 }
+
+MainWrapper.propTypes = {
+  backgroundImg: string,
+  addBtnTxt: string,
+  children: element.isRequired,
+  handleSearch: func,
+};
 
 export default MainWrapper;

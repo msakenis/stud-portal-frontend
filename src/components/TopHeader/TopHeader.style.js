@@ -31,6 +31,7 @@ export const StyledButton = styled.button`
   color: ${(props) => props.theme.primary.color};
   box-shadow: 1px 3px 3px 1px ${(props) => props.theme.primaryHover.background};
   cursor: pointer;
+
   &&:hover {
     background-color: ${(props) => props.theme.primaryHover.background};
     color: ${(props) => props.theme.secondary.color};

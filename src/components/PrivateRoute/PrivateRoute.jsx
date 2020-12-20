@@ -3,6 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { AuthContext } from '../../contexts/Auth.context';
 import jwtDecode from 'jwt-decode';
 import { Loading } from '../';
+import { object, string } from 'prop-types';
 
 function PrivateRoute({ path, component }) {
   const token = localStorage.getItem('token');
@@ -43,4 +44,8 @@ function PrivateRoute({ path, component }) {
   }
 }
 
+PrivateRoute.propTypes = {
+  path: string.isRequired,
+  component: object.isRequired,
+};
 export default PrivateRoute;

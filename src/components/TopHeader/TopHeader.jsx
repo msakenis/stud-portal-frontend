@@ -3,14 +3,15 @@ import { useHistory } from 'react-router-dom';
 import { AuthContext } from '../../contexts/Auth.context';
 import { SearchInput } from '../';
 import * as S from './TopHeader.style';
+import { func, string } from 'prop-types';
 
-function TopHeader({ addBtnTxt }) {
+function TopHeader({ addBtnTxt, handleSearch }) {
   const auth = useContext(AuthContext);
   const history = useHistory();
   const linkTo = addBtnTxt ? 'add-' + addBtnTxt.toLowerCase() : '';
   return (
     <S.FlexDiv>
-      <SearchInput />
+      <SearchInput handleChange={handleSearch} />
       <div>
         {addBtnTxt && (
           <S.StyledLink to={linkTo}>+ ADD {addBtnTxt}</S.StyledLink>
@@ -28,5 +29,8 @@ function TopHeader({ addBtnTxt }) {
     </S.FlexDiv>
   );
 }
-
+TopHeader.propTypes = {
+  handleSearch: func,
+  addBtnTxt: string,
+};
 export default TopHeader;

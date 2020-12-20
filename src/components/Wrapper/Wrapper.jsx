@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './Wrapper.style';
+import { element, string, bool } from 'prop-types';
 function Wrapper({ children, backgroundImg, isBlur }) {
   return (
     <div>
@@ -8,5 +9,11 @@ function Wrapper({ children, backgroundImg, isBlur }) {
     </div>
   );
 }
+
+Wrapper.propTypes = {
+  children: element.isRequired,
+  backgroundImg: string,
+  isBlur: bool,
+};
 
 export default Wrapper;
