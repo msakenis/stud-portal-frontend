@@ -17,6 +17,7 @@ export const Button = styled.button`
   font-weight: 500;
   font-size: 1.1em;
   width: 40%;
+  outline: none;
   cursor: pointer;
   &&:hover {
     background: linear-gradient(

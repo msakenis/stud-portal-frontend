@@ -14,20 +14,22 @@ function Home() {
 
   return (
     <MainWrapper>
-      <S.FlexDiv>
-        {statsArr.map((card) => (
-          <StatisticsCard
-            key={card.id}
-            borderColor={card.borderColor}
-            statName={card.statName}
-            statNumber={card.statNumber}
-            imgUrl={card.imgUrl}
-          />
-        ))}
-      </S.FlexDiv>
-      <S.ActivitiesDiv>
-        <ActNotifWrapper activitiesArr={activitiesArr} />
-      </S.ActivitiesDiv>
+      <S.WrapperDiv>
+        <S.FlexDiv>
+          {statsArr.map((card) => (
+            <StatisticsCard
+              key={card.id}
+              borderColor={card.borderColor}
+              statName={card.statName}
+              statNumber={card.statNumber}
+              imgUrl={card.imgUrl}
+            />
+          ))}
+        </S.FlexDiv>
+        <S.ActivitiesDiv>
+          <ActNotifWrapper activitiesArr={activitiesArr} />
+        </S.ActivitiesDiv>
+      </S.WrapperDiv>
     </MainWrapper>
   );
 }

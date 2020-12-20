@@ -9,7 +9,7 @@ export const TableBox = styled.div`
     padding: 1.2em;
   }
   @media (max-width: ${({ theme }) => theme.tablet}) {
-    max-height: 88vh;
+    max-height: 85vh;
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     font-size: 1.4em;
@@ -34,7 +34,7 @@ export const TableBox = styled.div`
       border: none;
       border-bottom: 1px solid #eee;
       position: relative;
-      padding-left: 50% !important;
+      padding-left: 60% !important;
     }
     && td:before {
       /* Now like a table header */

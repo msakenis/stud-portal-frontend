@@ -36,6 +36,7 @@ export const Input = styled.input`
   background-color: ${(props) => props.theme.primary.background};
   box-shadow: 1px 3px 3px 1px ${(props) => props.theme.primaryHover.background};
   transition: width 0.3s;
+  outline: none;
   &:focus {
     box-shadow: 0 0 3px 1px ${(props) => props.theme.secondaryHover.color};
   }
@@ -45,7 +46,7 @@ export const Input = styled.input`
     position: absolute;
 
     &&:focus {
-      width: 160%;
+      width: 140%;
     }
   }
 `;

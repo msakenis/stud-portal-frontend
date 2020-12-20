@@ -39,6 +39,7 @@ export const InputField = styled.input`
   padding: 1em 3em;
   font-size: 16px;
   border-radius: 5px;
+  outline: none;
   color: ${(props) => props.theme.primary.color};
 
   border: 2px solid ${(props) => props.theme.primary.background};

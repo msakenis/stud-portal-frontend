@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 
 export const CardDiv = styled.div`
-  width: calc(25% - 2.5em);
+  width: calc(25% - 24px);
   min-width: 200px;
   display: flex;
   align-items: center;
   background-color: #ffffff;
   padding: 1.2em 0;
   box-sizing: border-box;
-  margin-right: 2em;
+
   margin-top: 1em;
   border-radius: 7px;
   border-left: 7px solid ${(props) => props.borderColor};
+  &&:not(:last-child) {
+    margin-right: 2em;
+  }
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+    margin-right: 0;
+  }
 `;
 
 export const Image = styled.img`
