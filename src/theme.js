@@ -15,6 +15,10 @@ const theme = {
     color: '#4A90CF',
     background: '#969EB0',
   },
+  mobile: '600px',
+  tablet: '800px',
+  bigTablet: '1000px',
+  smallLaptop: '1200px',
 };
 
 export default theme;
