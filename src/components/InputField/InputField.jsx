@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './InputField.style';
+import { func, bool, number, string, oneOfType } from 'prop-types';
 
 function InputField({
   label,
@@ -11,7 +12,6 @@ function InputField({
   minLength,
   maxLength,
   placeholder,
-  options,
   iconClass,
   inputValue,
 }) {
@@ -53,30 +53,7 @@ function InputField({
           {label && <S.Label htmlFor={inputId}>{label}</S.Label>}
         </S.InputDiv>
       );
-    case 'dropdown':
-      return (
-        <S.InputDiv>
-          {label && <S.Label htmlFor={inputId}>{label}</S.Label>}
-          <S.DropdownBox>
-            <S.DropdownSelect
-              onChange={handleChange}
-              id={inputId}
-              name={name}
-              required={required}
-            >
-              <option value="" disabled>
-                Select option
-              </option>
-              {options &&
-                options.map((option) => (
-                  <option key={option.id} value={option.value}>
-                    {option.text}
-                  </option>
-                ))}
-            </S.DropdownSelect>
-          </S.DropdownBox>
-        </S.InputDiv>
-      );
+
     default:
       return (
         <S.InputDiv>
@@ -99,4 +76,17 @@ function InputField({
   }
 }
 
+InputField.propTypes = {
+  label: string,
+  name: string.isRequired,
+  handleChange: func,
+  type: string.isRequired,
+  inputId: string,
+  required: bool,
+  minLength: number,
+  maxLength: number,
+  placeholder: string,
+  iconClass: string,
+  inputValue: oneOfType([number, string]),
+};
 export default InputField;

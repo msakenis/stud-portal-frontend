@@ -1,19 +1,12 @@
 import React from 'react';
 import * as S from './Notification.style';
-import { Link } from 'react-router-dom';
+import { string } from 'prop-types';
 
-function Notification({ message, type, loginNotif }) {
-  return (
-    <S.NotificationText type={type}>
-      {loginNotif ? (
-        <>
-          {message} <Link to="/login"> here</Link>
-        </>
-      ) : (
-        message
-      )}
-    </S.NotificationText>
-  );
+function Notification({ message, type }) {
+  return <S.NotificationText type={type}>{message}</S.NotificationText>;
 }
-
+Notification.propTypes = {
+  message: string.isRequired,
+  type: string,
+};
 export default Notification;
