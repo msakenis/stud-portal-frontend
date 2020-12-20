@@ -10,9 +10,11 @@ function addStudentTo(
   setErrorMessage,
   setNotifType,
   error,
-  token
+  token,
+  setLoadingBtn
 ) {
   error = false;
+  setLoadingBtn(true);
   fetch(`${process.env.REACT_APP_SERVER_URL}/AddStudent`, {
     method: 'POST',
     headers: {
@@ -31,10 +33,12 @@ function addStudentTo(
       return res.json();
     })
     .then((data) => {
+      setLoadingBtn(false);
       setError(true);
       setErrorMessage(data.msg || 'Error!');
     })
     .catch((err) => {
+      setLoadingBtn(false);
       setError(true);
       setNotifType('error');
       setErrorMessage(err.message);
@@ -47,6 +51,7 @@ function AddStudent() {
   const [errorMessage, setErrorMessage] = useState();
   const [notifType, setNotifType] = useState();
   const selectedId = useContext(HighlightIdContext);
+  const [loadingBtn, setLoadingBtn] = useState(false);
 
   useEffect(() => {
     selectedId.setId(0);
@@ -65,13 +70,15 @@ function AddStudent() {
                 setErrorMessage,
                 setNotifType,
                 error,
-                token
+                token,
+                setLoadingBtn
               )
             }
             fields={AddStudentForm}
             errorMessage={errorMessage}
             error={error}
             notifType={notifType}
+            loading={loadingBtn}
             buttonName="Add"
           />
         </S.InputBox>
