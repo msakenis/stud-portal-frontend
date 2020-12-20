@@ -24,7 +24,7 @@ function editCourse(
   error = false;
   setLoadingBtn(true);
   if (selectedStudents.length !== 0) {
-    fetch(`${process.env.REACT_APP_API}/EditCourse/${id}`, {
+    fetch(`/api/EditCourse/${id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ function EditCourse() {
   useEffect(() => {
     selectedId.setId(0);
 
-    fetch(`${process.env.REACT_APP_API}/EditCourse/${id}`, {
+    fetch(`/api/EditCourse/${id}`, {
       headers: {
         Authorization: token,
       },
