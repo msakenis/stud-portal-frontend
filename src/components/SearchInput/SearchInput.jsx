@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './SearchInput.style';
+import { func } from 'prop-types';
 
 function SearchInput({ handleChange }) {
   return (
@@ -9,5 +10,7 @@ function SearchInput({ handleChange }) {
     </S.InputDiv>
   );
 }
-
+SearchInput.propTypes = {
+  handleChange: func,
+};
 export default SearchInput;

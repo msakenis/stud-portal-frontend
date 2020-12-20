@@ -1,5 +1,6 @@
 import React from 'react';
 import { IconBtn } from '../';
+import { func, bool, number } from 'prop-types';
 
 function IconBtnsConfirm({
   displayBtns,
@@ -23,5 +24,13 @@ function IconBtnsConfirm({
     </>
   );
 }
-
+IconBtn.propTypes = {
+  displayBtns: bool,
+  handleClick: func,
+  handleClose: func,
+  handleConfirm: func,
+  handleEdit: func,
+  selectedId: number,
+  id: number,
+};
 export default IconBtnsConfirm;
