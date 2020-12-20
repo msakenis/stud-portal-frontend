@@ -17,7 +17,7 @@ function PrivateRoute({ path, component }) {
       const timeNow = new Date().getTime() / 1000;
 
       if (!(tokenExpiration < timeNow)) {
-        fetch(`/api/VerifyLoggedIn`, {
+        fetch(`${process.env.REACT_APP_API}/VerifyLoggedIn`, {
           headers: {
             Authorization: token,
           },

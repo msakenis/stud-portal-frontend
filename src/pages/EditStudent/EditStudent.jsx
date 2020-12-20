@@ -17,7 +17,7 @@ function editStudent(
 ) {
   error = false;
   setLoadingBtn(true);
-  fetch(`/api/EditStudent/${id}`, {
+  fetch(`${process.env.REACT_APP_API}/EditStudent/${id}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ function EditStudent() {
 
   useEffect(() => {
     selectedId.setId(0);
-    fetch(`/api/EditStudent/${id}`, {
+    fetch(`${process.env.REACT_APP_API}/EditStudent/${id}`, {
       headers: {
         Authorization: token,
       },

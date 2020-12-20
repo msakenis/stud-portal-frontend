@@ -17,7 +17,7 @@ function loginTo(
 ) {
   error = false;
   setLoadingBtn(true);
-  fetch(`/api/Login`, {
+  fetch(`${process.env.REACT_APP_API}/Login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
