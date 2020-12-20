@@ -10,6 +10,6 @@ module.exports = function (context, req) {
     req.userData = decodedToken;
     sendContext(context, { msg: 'ok' }, 200);
   } catch (err) {
-    sendContext(context, { msg: 'Please login to process this action!' }, 401);
+    sendContext(context, err, 401);
   }
 };
