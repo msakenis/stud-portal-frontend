@@ -15,3 +15,6 @@ export { default as IconBtn } from './IconBtn/IconBtn';
 export { default as IconBtnsConfirm } from './IconBtnsConfirm/IconBtnsConfirm';
 export { default as SelectedStudent } from './SelectedStudent/SelectedStudent';
 export { default as Burger } from './Burger/Burger';
+export { default as StatisticsCard } from './StatisticsCard/StatisticsCard';
+export { default as ActivityNotification } from './ActivityNotification/ActivityNotification';
+export { default as ActNotifWrapper } from './ActNotifWrapper/ActNotifWrapper';

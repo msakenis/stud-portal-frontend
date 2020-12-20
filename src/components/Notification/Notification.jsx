@@ -6,7 +6,7 @@ function Notification({ message, type }) {
   return <S.NotificationText type={type}>{message}</S.NotificationText>;
 }
 Notification.propTypes = {
-  message: string.isRequired,
+  message: string,
   type: string,
 };
 export default Notification;
