@@ -6,8 +6,8 @@ module.exports = function (context, req) {
   try {
     // checks if logged in
     const token = req.headers.authorization.split(' ')[1];
-    const decodedToken = jwt.verify(token, process.env.SECRETKEY);
-
+    const decodedToken = jwt.verify(token, '123456789');
+    console.log(decodedToken);
     database((db) =>
       db.query(`SELECT * FROM courses`, (err, result) => {
         if (err) {
