@@ -22,7 +22,14 @@ function PrivateRoute({ path, component }) {
             Authorization: token,
           },
         })
-          .then((res) => (res.ok ? setAuth(true) : setRedirect(true)))
+          .then((res) => {
+            if (res.ok) {
+              setAuth(true);
+            } else {
+              auth.clearLocalStorage();
+              setRedirect(true);
+            }
+          })
           .catch((err) => {
             auth.clearLocalStorage();
             setRedirect(true);
