@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const FlexDiv = styled.div`
   display: flex;
   height: 100%;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    flex-direction: column;
+  }
 `;
 
 export const ImageBox = styled.div`
@@ -12,12 +15,19 @@ export const ImageBox = styled.div`
   background-position: center center;
   width: 40%;
   height: 100%;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+    max-height: 250px;
+  }
 `;
 
 export const FormBox = styled.div`
   width: 60%;
   padding: 3em 5em;
   box-sizing: border-box;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h1`

@@ -12,10 +12,11 @@ function loginTo(
   setNotifType,
   token,
   history,
-  error
+  error,
+  setLoadingBtn
 ) {
   error = false;
-
+  setLoadingBtn(true);
   fetch(`${process.env.REACT_APP_SERVER_URL}/Login`, {
     method: 'POST',
     headers: {
@@ -24,7 +25,6 @@ function loginTo(
     body: JSON.stringify(fieldValues),
   })
     .then((res) => {
-      console.log(res);
       if (!res.ok) {
         error = true;
         setError(true);
@@ -33,6 +33,7 @@ function loginTo(
       return res.json();
     })
     .then((data) => {
+      setLoadingBtn(false);
       if (error) {
         setErrorMessage(data.msg || 'Error!');
       } else {
@@ -41,6 +42,7 @@ function loginTo(
       }
     })
     .catch((err) => {
+      setLoadingBtn(false);
       setError(true);
       setNotifType('error');
       setErrorMessage(err.message);
@@ -53,6 +55,7 @@ function Login() {
   const [notifType, setNotifType] = useState();
   const token = useContext(AuthContext);
   const history = useHistory();
+  const [loadingBtn, setLoadingBtn] = useState(false);
 
   return (
     <Wrapper
@@ -90,7 +93,8 @@ function Login() {
                     setNotifType,
                     token,
                     history,
-                    error
+                    error,
+                    setLoadingBtn
                   )
                 }
                 fields={registration}
@@ -98,6 +102,7 @@ function Login() {
                 error={error}
                 notifType={notifType}
                 buttonName="Login"
+                loading={loadingBtn}
               />
               <S.LinksBox>
                 <S.TextSpan>Or login with</S.TextSpan>
