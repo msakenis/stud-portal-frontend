@@ -10,8 +10,8 @@ import HighlightIdProvider from './contexts/HighlightId.context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <AuthProvider>
         <HighlightIdProvider>
           <Routes />
