@@ -54,3 +54,32 @@ export const AddStudentForm = [
     iconClass: 'fas fa-phone',
   },
 ];
+export const AddCourseForm = [
+  {
+    name: 'title',
+    type: 'text',
+    labelText: 'Course Title',
+    required: true,
+    minLength: 2,
+    maxLength: 50,
+    iconClass: 'fas fa-book-reader',
+  },
+  {
+    name: 'lecturer',
+    type: 'text',
+    labelText: 'Lecturer',
+    required: true,
+    minLength: 2,
+    maxLength: 50,
+    iconClass: 'fas fa-chalkboard-teacher',
+  },
+  {
+    name: 'description',
+    type: 'text',
+    labelText: 'Description',
+    required: true,
+    minLength: 2,
+    maxLength: 50,
+    iconClass: 'fas fa-info',
+  },
+];
