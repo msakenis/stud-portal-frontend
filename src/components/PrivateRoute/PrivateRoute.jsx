@@ -17,24 +17,23 @@ function PrivateRoute({ path, component }) {
       const timeNow = new Date().getTime() / 1000;
 
       if (!(tokenExpiration < timeNow)) {
-        setAuth(true);
-        // fetch(`/api/VerifyLoggedIn`, {
-        //   headers: {
-        //     Authorization: token,
-        //   },
-        // })
-        //   .then((res) => {
-        //     if (res.ok) {
-        //       setAuth(true);
-        //     } else {
-        //       auth.clearLocalStorage();
-        //       setRedirect(true);
-        //     }
-        //   })
-        //   .catch((err) => {
-        //     auth.clearLocalStorage();
-        //     setRedirect(true);
-        //   });
+        fetch(`${process.env.REACT_APP_SERVER_URL}/VerifyLoggedIn`, {
+          headers: {
+            Authorization: token,
+          },
+        })
+          .then((res) => {
+            if (res.ok) {
+              setAuth(true);
+            } else {
+              auth.clearLocalStorage();
+              setRedirect(true);
+            }
+          })
+          .catch((err) => {
+            auth.clearLocalStorage();
+            setRedirect(true);
+          });
       } else {
         auth.clearLocalStorage();
         setRedirect(true);

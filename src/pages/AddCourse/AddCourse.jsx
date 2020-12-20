@@ -22,7 +22,7 @@ function addCourseTo(
   error = false;
   setLoadingBtn(true);
   if (selectedStudents.length !== 0) {
-    fetch(`/api/AddCourse`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/AddCourse`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function AddCourse() {
 
   useEffect(() => {
     selectedId.setId(0);
-    fetch(`/api/AddCourse`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/AddCourse`, {
       headers: {
         Authorization: token,
       },

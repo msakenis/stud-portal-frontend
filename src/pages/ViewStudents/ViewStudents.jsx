@@ -20,7 +20,7 @@ function deleteStudent(
   filteredData
 ) {
   error = false;
-  fetch(`/api/DeleteStudent`, {
+  fetch(`${process.env.REACT_APP_SERVER_URL}/DeleteStudent`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function ViewStudents() {
   const history = useHistory();
   useEffect(() => {
     selectedId.setId(3);
-    fetch(`/api/students`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/students`, {
       headers: {
         Authorization: token,
       },
