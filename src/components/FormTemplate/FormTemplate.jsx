@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InputField, Button, Notification } from '../';
+import { bool, func, array, string, element, object } from 'prop-types';
 
 import * as S from './FormTemplate.style';
 
@@ -11,24 +12,22 @@ function FormTemplate({
   errorMessage,
   buttonName,
   formTitle,
-  loginNotif,
-  options,
-  studentData,
+
+  Data,
+  loading,
+  splitInput,
+  children,
 }) {
   const [fieldValues, setFieldValues] = useState('');
 
   useEffect(() => {
-    studentData && setFieldValues(studentData[0]);
-  }, [studentData]);
+    Data && setFieldValues(Data);
+  }, [Data]);
 
   return (
     <>
       {error && notifType && (
-        <Notification
-          message={errorMessage}
-          type={notifType}
-          loginNotif={loginNotif}
-        />
+        <Notification message={errorMessage} type={notifType} />
       )}
       <S.FormDiv>
         <S.FormTitle>{formTitle}</S.FormTitle>
@@ -39,32 +38,89 @@ function FormTemplate({
             callback(fieldValues);
           }}
         >
-          {fields.map((field) => (
-            <InputField
-              inputId={field.name}
-              key={field.name}
-              name={field.name}
-              type={field.type}
-              label={field.labelText}
-              required={field.required}
-              minLength={field.minLength}
-              maxLength={field.maxLength}
-              placeholder={field.placeholder}
-              options={options}
-              iconClass={field.iconClass}
-              inputValue={
-                fieldValues[field.name] ? fieldValues[field.name] : ''
-              }
-              handleChange={(e) => {
-                setFieldValues({
-                  ...fieldValues,
-                  [field.name]: e.target.value,
-                });
-              }}
-            />
-          ))}
+          {splitInput ? (
+            <>
+              <S.FlexBox>
+                {fields.slice(0, 2).map((field) => (
+                  <InputField
+                    inputId={field.name}
+                    key={field.name}
+                    name={field.name}
+                    type={field.type}
+                    label={field.labelText}
+                    required={field.required}
+                    minLength={field.minLength}
+                    maxLength={field.maxLength}
+                    placeholder={field.placeholder}
+                    iconClass={field.iconClass}
+                    inputValue={
+                      fieldValues[field.name] ? fieldValues[field.name] : ''
+                    }
+                    handleChange={(e) => {
+                      setFieldValues({
+                        ...fieldValues,
+                        [field.name]: e.target.value,
+                      });
+                    }}
+                  />
+                ))}
+              </S.FlexBox>
+              {fields.slice(2, 10).map((field) => (
+                <InputField
+                  inputId={field.name}
+                  key={field.name}
+                  name={field.name}
+                  type={field.type}
+                  label={field.labelText}
+                  required={field.required}
+                  minLength={field.minLength}
+                  maxLength={field.maxLength}
+                  placeholder={field.placeholder}
+                  iconClass={field.iconClass}
+                  inputValue={
+                    fieldValues[field.name] ? fieldValues[field.name] : ''
+                  }
+                  handleChange={(e) => {
+                    setFieldValues({
+                      ...fieldValues,
+                      [field.name]: e.target.value,
+                    });
+                  }}
+                />
+              ))}
+            </>
+          ) : (
+            <>
+              {fields.map((field) => (
+                <InputField
+                  inputId={field.name}
+                  key={field.name}
+                  name={field.name}
+                  type={field.type}
+                  label={field.labelText}
+                  required={field.required}
+                  minLength={field.minLength}
+                  maxLength={field.maxLength}
+                  placeholder={field.placeholder}
+                  iconClass={field.iconClass}
+                  inputValue={
+                    fieldValues[field.name] ? fieldValues[field.name] : ''
+                  }
+                  handleChange={(e) => {
+                    setFieldValues({
+                      ...fieldValues,
+                      [field.name]: e.target.value,
+                    });
+                  }}
+                />
+              ))}
+            </>
+          )}
+          {children}
           <S.ButtonBox>
-            <Button type="submit">{buttonName}</Button>
+            <Button type="submit" loading={loading}>
+              {buttonName}
+            </Button>
           </S.ButtonBox>
         </form>
       </S.FormDiv>
@@ -72,4 +128,17 @@ function FormTemplate({
   );
 }
 
+FormTemplate.propTypes = {
+  fields: array.isRequired,
+  callback: func.isRequired,
+  notifType: string,
+  error: bool,
+  errorMessage: string,
+  buttonName: string,
+  formTitle: string,
+  Data: object,
+  loading: bool,
+  splitInput: bool,
+  children: element,
+};
 export default FormTemplate;
