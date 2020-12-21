@@ -23,17 +23,29 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" defer />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
-      defer
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');"
     />
     <script
       defer
       src="https://kit.fontawesome.com/3e48c70029.js"
       crossorigin="anonymous"
     ></script>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      />
+    </noscript>
     <title>Student Sys</title>
   </head>
   <body>

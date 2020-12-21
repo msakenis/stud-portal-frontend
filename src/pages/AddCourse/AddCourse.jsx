@@ -17,7 +17,8 @@ function addCourseTo(
   error,
   token,
   setLoadingBtn,
-  selectedStudents
+  selectedStudents,
+  setSelectedStudents
 ) {
   error = false;
   setLoadingBtn(true);
@@ -43,6 +44,9 @@ function addCourseTo(
         setLoadingBtn(false);
         setError(true);
         setErrorMessage(data.msg || 'Error!');
+        if (!error) {
+          setSelectedStudents([]);
+        }
       })
       .catch((err) => {
         setLoadingBtn(false);
@@ -102,7 +106,8 @@ function AddCourse() {
                 error,
                 token,
                 setLoadingBtn,
-                selectedStudents
+                selectedStudents,
+                setSelectedStudents
               )
             }
             fields={AddCourseForm}

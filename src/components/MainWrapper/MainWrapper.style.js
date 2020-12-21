@@ -6,6 +6,7 @@ export const Title = styled.h1`
 
 export const ContentBox = styled.div`
   width: 100%;
+
   background-color: ${(props) => props.theme.primary.background};
 `;
 export const FlexDiv = styled.div`

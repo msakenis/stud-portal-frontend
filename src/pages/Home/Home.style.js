@@ -9,7 +9,7 @@ export const FlexDiv = styled.div`
 export const ActivitiesDiv = styled.div``;
 
 export const WrapperDiv = styled.div`
-  max-height: 90vh;
+  max-height: 70vh;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 2em;
