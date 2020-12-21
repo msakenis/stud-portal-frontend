@@ -13,7 +13,7 @@ const theme = {
   },
   secondaryHover: {
     color: '#7D5BA6',
-    background: '#707070',
+    background: '#575960',
   },
   mobile: '600px',
   tablet: '800px',

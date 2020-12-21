@@ -6,7 +6,7 @@ function StatisticsCard({ imgUrl, statName, statNumber, borderColor }) {
   return (
     <S.CardDiv borderColor={borderColor}>
       <S.ImgDiv>
-        <S.Image src={imgUrl} alt={statName} />
+        <S.Image src={imgUrl} width="105px" height="105px" alt={statName} />
       </S.ImgDiv>
       <S.StatsDiv>
         <S.StatTitle>{statName}</S.StatTitle>

@@ -4,7 +4,12 @@ import { func, string } from 'prop-types';
 
 function IconBtn({ className, handleClick, background }) {
   return (
-    <S.Button background={background} type="button" onClick={handleClick}>
+    <S.Button
+      background={background}
+      aria-label={className}
+      type="button"
+      onClick={handleClick}
+    >
       <S.StyledIcon className={className}></S.StyledIcon>
     </S.Button>
   );
