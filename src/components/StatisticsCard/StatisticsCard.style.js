@@ -25,6 +25,7 @@ export const CardDiv = styled.div`
 
 export const Image = styled.img`
   width: 80%;
+  object-fit: contain;
 `;
 
 export const ImgDiv = styled.div`
