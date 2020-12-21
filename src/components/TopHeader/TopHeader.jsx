@@ -18,6 +18,7 @@ function TopHeader({ addBtnTxt, handleSearch }) {
         )}
       </div>
       <S.StyledButton
+        aria-label="log-out"
         onClick={() => {
           auth.clearLocalStorage();
           auth.updateToken();

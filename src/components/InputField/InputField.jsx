@@ -23,7 +23,7 @@ function InputField({
           <S.InputField
             onChange={handleChange}
             onBlur={handleChange}
-            id={inputId}
+            id={name}
             name={name}
             type="email"
             required={required}
@@ -32,7 +32,7 @@ function InputField({
             placeholder={placeholder}
             value={inputValue}
           />
-          {label && <S.Label htmlFor={inputId}>{label}</S.Label>}
+          {label && <S.Label htmlFor={name}>{label}</S.Label>}
         </S.InputDiv>
       );
     case 'password':
@@ -42,7 +42,7 @@ function InputField({
           <S.InputField
             onChange={handleChange}
             onBlur={handleChange}
-            id={inputId}
+            id={name}
             name={name}
             type="password"
             required={required}
@@ -50,7 +50,7 @@ function InputField({
             maxLength={maxLength}
             placeholder={placeholder}
           />
-          {label && <S.Label htmlFor={inputId}>{label}</S.Label>}
+          {label && <S.Label htmlFor={name}>{label}</S.Label>}
         </S.InputDiv>
       );
 
@@ -61,7 +61,7 @@ function InputField({
           <S.InputField
             onChange={handleChange}
             onBlur={handleChange}
-            id={inputId}
+            id={name}
             name={name}
             type="text"
             required={required}
@@ -70,7 +70,7 @@ function InputField({
             placeholder={placeholder}
             value={inputValue}
           />
-          {label && <S.Label htmlFor={inputId}>{label}</S.Label>}
+          {label && <S.Label htmlFor={name}>{label}</S.Label>}
         </S.InputDiv>
       );
   }

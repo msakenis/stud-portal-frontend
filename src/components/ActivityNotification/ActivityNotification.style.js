@@ -5,7 +5,7 @@ export const NotifDiv = styled.div`
     border-bottom: 2px solid ${({ theme }) => theme.secondary.background};
   }
 `;
-export const NotifTitle = styled.h4`
+export const NotifTitle = styled.h6`
   font-weight: 500;
 
   font-size: 1.1em;

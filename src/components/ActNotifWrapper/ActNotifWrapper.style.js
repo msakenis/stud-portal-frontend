@@ -12,7 +12,7 @@ export const WrapperDiv = styled.div`
   border-radius: 7px;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h5`
   margin: 0;
   padding-bottom: 1em;
   font-weight: 500;
