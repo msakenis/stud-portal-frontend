@@ -6,11 +6,12 @@ export const FlexDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-height: 60px;
+  height: 60px;
   padding: 1em;
   padding-left: 3em;
   box-sizing: border-box;
   background-color: #fff;
+  position: relative;
 `;
 
 export const StyledLink = styled(Link)`

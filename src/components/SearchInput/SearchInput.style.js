@@ -11,6 +11,8 @@ export const InputDiv = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin-left: 4em;
+    margin-top: auto;
+    margin-bottom: auto;
     width: 30%;
     position: relative;
     top: -17px;
@@ -18,11 +20,12 @@ export const InputDiv = styled.div`
 `;
 
 export const Icon = styled.i`
-  padding: 12px;
   color: ${(props) => props.theme.primary.color};
   width: 10px;
   text-align: left;
   z-index: 2;
+  line-height: normal;
+  padding: 11px;
 `;
 
 export const Input = styled.input`
@@ -37,6 +40,7 @@ export const Input = styled.input`
   box-shadow: 1px 3px 3px 1px ${(props) => props.theme.primaryHover.background};
   transition: width 0.3s;
   outline: none;
+
   &:focus {
     box-shadow: 0 0 3px 1px ${(props) => props.theme.secondaryHover.color};
   }
@@ -44,7 +48,7 @@ export const Input = styled.input`
     width: 50%;
     z-index: 1;
     position: absolute;
-
+    padding: 8px 8px 8px 30px;
     &&:focus {
       width: 140%;
     }

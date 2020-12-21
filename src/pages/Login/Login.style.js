@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import graduatedImg from '../../assets/img/graduated-login.jpg';
+import graduatedImg from '../../assets/img/graduated-login.webp';
 
 export const FlexDiv = styled.div`
   display: flex;

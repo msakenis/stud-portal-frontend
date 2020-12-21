@@ -4,7 +4,7 @@ import { registration } from '../../utils/formData';
 import { Wrapper, Logo, FormTemplate } from '../../components';
 import { AuthContext } from '../../contexts/Auth.context';
 import * as S from './Login.style';
-import LoginBg from '../../assets/img/login-bg.jpg';
+import LoginBg from '../../assets/img/login-bg.webp';
 
 function loginTo(
   fieldValues,

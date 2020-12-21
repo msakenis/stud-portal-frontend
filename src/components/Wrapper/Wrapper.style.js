@@ -24,7 +24,6 @@ export const MainBox = styled.div`
   box-sizing: border-box;
   transform: translate(-50%, -50%);
   overflow: hidden;
-
   box-shadow: 5px 5px 20px 4px ${({ theme }) => theme.primary.color};
   opacity: 0.9;
   @media (max-width: ${({ theme }) => theme.smallLaptop}) {
@@ -36,7 +35,8 @@ export const MainBox = styled.div`
     width: 95%;
   }
   @media (max-width: ${({ theme }) => theme.tablet}) {
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    border-radius: 0;
   }
 `;

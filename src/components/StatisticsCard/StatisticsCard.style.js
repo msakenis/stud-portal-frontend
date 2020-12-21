@@ -14,10 +14,12 @@ export const CardDiv = styled.div`
   border-left: 7px solid ${(props) => props.borderColor};
   &&:not(:last-child) {
     margin-right: 2em;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      margin-right: 0;
+    }
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
-    margin-right: 0;
   }
 `;
 
