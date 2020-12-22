@@ -7,10 +7,7 @@ import * as S from './MainWrapper.style';
 
 function MainWrapper({ backgroundImg, addBtnTxt, children, handleSearch }) {
   return (
-    <Wrapper
-      id="wrapper"
-      backgroundImg={backgroundImg ? backgroundImg : MainbgImg}
-    >
+    <Wrapper backgroundImg={backgroundImg ? backgroundImg : MainbgImg}>
       <S.FlexDiv>
         <HeaderBase />
         <S.ContentBox>
