@@ -1,7 +1,7 @@
 <br />
 <p align="center">
  
-  <h3 align="center">CodeOp Student Portal</h3>
+  <h1 align="center">CodeOp Student Portal</h1>
 
   <p align="center">
     This app helps to manage courses and students for any kind of school.
