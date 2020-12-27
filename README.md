@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+<p align="center">
+ 
+  <h3 align="center">CodeOp Student Portal</h3>
 
-## Available Scripts
+  <p align="center">
+    This app helps to manage courses and students for any kind of school.
+</p>
 
-In the project directory, you can run:
+<!-- ABOUT THE PROJECT -->
 
-### `npm start`
+## :bulb: About The Project
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ This is CRUD based Demo system, which you can add students, courses and set students to courses.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### :hammer: Built With
 
-### `npm test`
+- Used React.js with function components, hooks, context.
+- JWT and NodeJS for Authentication and Back-End;
+- MySQL Database;
+- Styled-Components for styling.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Please note that Back-End NodeJS code is in other repo https://github.com/msakenis/studportal-BE-serverless-
+Back-End adapted to work on Serverless service providers like MS Azure Functions.
 
-### `npm run build`
+<!-- GETTING STARTED -->
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :paperclip: Getting Started
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### :mag_right: Demo version
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can try the demo version <a href="http://sakenis.me.skujuotis.serveriai.lt/">here</a>
 
-### `npm run eject`
+PLEASE USE USER TO LOGIN:
+email: admin3@email.com
+password: 123456789
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### :computer: Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To get a local copy up and running follow these simple steps.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone the repo
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+git clone https://github.com/msakenis/stud-portal-frontend/
+```
 
-## Learn More
+2. Install NPM packages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Go to Back-End repo, follow the instructions in the repo, enter your back-end providers API URL to .env file and run the application:
 
-### Code Splitting
+```sh
+npm run start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  <!-- USAGE EXAMPLES -->
 
-### Analyzing the Bundle Size
+## :rocket: Usage
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1. Click on "Students" and add new students by filling simple form.
+2. Click on "Students" again and you will see all students and their statuses.
+3. You can search the student by entering any of student details to Search input.
+4. Click on "Courses" , than "+Add Course" and you will be able to create new course and attach students to the course.
+5. After students are attached to the course it will be saved in DB.
+6. You can Edit/Delete Students and Courses just by clicking Icons in the list by the item you want to proccess the action.
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## :email: Contact
 
-### Advanced Configuration
+Created by Mindaugas Sakenis, m.sakenis@gmail.com
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Project Link: [https://github.com/msakenis/stud-portal-frontend](https://github.com/msakenis/stud-portal-frontend)
